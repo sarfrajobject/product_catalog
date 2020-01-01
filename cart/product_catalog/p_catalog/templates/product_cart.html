@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+ 
+</head>
+<body>
+
+<h2 style="text-align:center">Product Cart</h2>
+{% for product in products %}
+      <div class="card">
+        
+        <a href=" Product_details/{{product.id }}">
+          <img src="{{ product.image_url }}" alt="Denim Jeans" style="width:100%"></a>
+        <h4 class="card-title" id="name"><b>{{ product.name }} </b></h4>
+        <h5 class="card-title" id="name">Quantity: {{ product.stock }}</h5>
+          <!-- <a href="Product_details/{{product.id}}">edit</a> -->
+
+      </div>
+{% endfor %}
+</body>
+</html>
+
+
